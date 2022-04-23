@@ -5,14 +5,15 @@ import Input from '../../UI/input/Input'
 import { registration } from '../../../actions/user'
 import '../../UI/input/input.css'
 import ModalBoxDeposit from '../../UI/ModalBox/ModalBoxDeposit'
+import { useDispatch } from 'react-redux'
+import { login } from '../../../actions/user'
 
 const Registration = (props) => {
-  const [name, setName] = useState('')
-  const [surname, setSurname] = useState('')
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
   const [modalBoxDeposit, setmodalBoxDeposit] = useState(false)
+  const dispatch = useDispatch()
   return (
     <div className="registration">
       <ModalBoxDeposit visible={modalBoxDeposit} setVisible={setmodalBoxDeposit}>
@@ -22,17 +23,10 @@ const Registration = (props) => {
       </ModalBoxDeposit>
 
       <div className="registration__header">Регистрация</div>
-      <div className="registration__input_name">Имя</div>
+
+      <div className="registration__input_name">Имя пользователя</div>
       <div className="registration__input">
-        <Input className="auth" value={name} setValue={setName} type="text" placeholder="Иван" />{' '}
-      </div>
-      <div className="registration__input_name">Фамилия</div>
-      <div className="registration__input">
-        <Input className="auth" value={surname} setValue={setSurname} type="text" placeholder="Иванов" />{' '}
-      </div>
-      <div className="registration__input_name">Электронная почта</div>
-      <div className="registration__input">
-        <Input className="auth" value={email} setValue={setEmail} type="email" placeholder="email@example.com" />{' '}
+        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Йоханнес" />{' '}
       </div>
       <div className="registration__input_name">Придумайте пароль</div>
       <div className="registration__input">
@@ -46,13 +40,15 @@ const Registration = (props) => {
           setValue={setRepeatPassword}
           type="password"
           placeholder="********"
-        />{' '}
+        />
       </div>
       <button
         className="button button__normal registration__button"
-        onClick={() => {
+        onClick={async () => {
           if (password === repeatPassword) {
-            registration(name, surname, email, password)
+            const res = await registration(username, password)
+
+            if (res === 'Пользователь был успешно зарегистрирован') dispatch(login(username, password))
 
             props.sVisible(false)
           } else setmodalBoxDeposit(true)
