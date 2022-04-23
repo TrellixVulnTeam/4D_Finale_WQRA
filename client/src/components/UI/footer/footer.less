@@ -1,0 +1,43 @@
+@import '../../../styles/colors/colors';
+@import '../../../styles/fonts/fonts';
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  height: 11vh;
+  z-index: -1;
+
+  display: flex;
+  background-color: @--dark-grey-color;
+  align-items: center;
+  justify-content: center;
+  font-size: @--mark-font-size;
+  font-family: @font-family;
+
+  &__name {
+    width: 33%;
+    // height: 70%;
+    text-align: left;
+  }
+
+  &__privacy {
+    // margin-left: 6.25%;
+    // left: 34%;
+    width: 53%;
+    text-align: center;
+  }
+
+  &__socnet {
+    width: 33%;
+    text-align: right;
+  }
+}
+
+.container_footer {
+  width: 61%;
+  display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  color: @--main-text-color;
+}

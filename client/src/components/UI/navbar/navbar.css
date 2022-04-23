@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/play/v16/6aez4K2oVqwIjtI.ttf) format('truetype');
+  }
+  .navbar {
+    display: flex;
+    background-color: #394249;
+    align-items: center;
+    height: 14vh;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Exo 2', 'Arial';
+  }
+  .navbar__logo {
+    width: 17%;
+  }
+  .navbar__search {
+    margin-left: 6.25%;
+    left: 10%;
+    width: 53%;
+  }
+  .navbar__registration {
+    margin-left: 2%;
+  }
+  .navbar__account {
+    width: 10%;
+  }
+  .navbar__account:hover {
+    cursor: pointer;
+  }
+  .navbar__wallet {
+    width: 10%;
+  }
+  .navbar__portfolio {
+    width: 10%;
+  }
+  .container {
+    width: 66%;
+    height: 63%;
+    display: flex;
+    margin-left: 14%;
+    align-items: center;
+  }
+  .logo_img {
+    width: 100%;
+  }
+  .search_input {
+    width: 80%;
+    background-color: #e9eef2;
+    font-size: 20px;
+    color: #000000;
+    border-radius: 10px;
+  }
+  .user {
+    display: block;
+    right: 0;
+  }
+  .acc_pop_up {
+    color: #e9eef2;
+    font-size: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    text-align: right;
+  }
+  .acc_pop_up__b {
+    color: #a0e28d;
+    text-decoration: none !important;
+    border: none !important;
+  }
+  .acc_in {
+    text-decoration: none !important;
+    border: none !important;
+    color: #e9eef2;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  .search_wrapper {
+    position: absolute;
+    display: flex;
+    transform: translate(-50%, -50%);
+  }
+  .searchStroke {
+    float: right;
+    width: 80%;
+    z-index: -1;
+  }
+  .search_img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
