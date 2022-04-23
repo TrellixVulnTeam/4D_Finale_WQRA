@@ -7,7 +7,7 @@ import Footer from './UI/footer/Footer.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../actions/user.js'
 import { useEffect } from 'react'
-import Account from "./account/Account"
+import Account from './account/Account'
 import { SearchContext } from '../context/index.js'
 
 function App() {

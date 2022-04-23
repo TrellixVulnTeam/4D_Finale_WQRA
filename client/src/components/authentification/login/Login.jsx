@@ -9,7 +9,7 @@ import { setUser } from '../../../reducers/userReducer'
 import ModalBoxDeposit from '../../UI/ModalBox/ModalBoxDeposit'
 
 const Login = (props) => {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setpassword] = useState('')
   const dispatch = useDispatch()
   const [modalBoxDeposit, setmodalBoxDeposit] = useState(false)
@@ -25,7 +25,7 @@ const Login = (props) => {
       <div className="login"></div>
       <div className="login__input_name">Электронная почта</div>
       <div className="login__input">
-        <Input className="auth" value={email} setValue={setEmail} type="email" placeholder="email@example.com" />{' '}
+        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Kazanova" />{' '}
       </div>
       <div className="login__input_name">Пароль</div>
       <div className="login__input">
@@ -34,7 +34,7 @@ const Login = (props) => {
       <button
         className="login__button"
         onClick={async () => {
-          await dispatch(login(email, password))
+          await dispatch(login(username, password))
           console.log(store.getState(setUser).user.isAuth)
           if (store.getState(setUser).user.isAuth) {
             props.sVisible(false)
