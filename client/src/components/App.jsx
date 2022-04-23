@@ -14,37 +14,11 @@ import WalletList from './wallet/WalletList'
 
 function App() {
   const isAuth = useSelector((state) => state.user.isAuth)
-  const [news, setNews] = useState([])
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(auth())
-    getAllNews()
   }, [])
-
-  const resources = [
-    'http://static.feed.rbc.ru/rbc/logical/footer/news.rss',
-    'https://ria.ru/export/rss2/archive/index.xml',
-  ]
-  async function getAllNews() {
-    const data = await Promise.all(
-      resources.map(async (item, index) => {
-        let response = await getNews(item)
-        console.log(response)
-        const data = response.items
-        const items = await data.map((item) => {
-          return {
-            title: item.title,
-            content: item.content,
-            link: item.link,
-            pubDate: item.pubDate,
-          }
-        })
-        return { title: response.title, link: response.link, items }
-      })
-    )
-    // console.log('shrump', data)
-    setNews(data)
-  }
 
   // console.log(news)
   return (
@@ -74,8 +48,8 @@ function App() {
         )}
         {isAuth && (
           <Routes>
-            <Route path="/" element={<Navigate to="/stocks" />} />
-            <Route path="/stocks" element={<StockList title="Каталог акций" />} />
+            <Route path="/" element={<Navigate to="/news" />} />
+            <Route path="/news" element={<StockList title="Каталог акций" />} />
             <Route path="/account" element={<Account />} />
             <Route path="/wallet" element={<WalletList />} />
             <Route
@@ -87,8 +61,6 @@ function App() {
                 </div>
               }
             />
-            <Route path="/" element={<Navigate to="/stocks" />} />
-            <Route path="/stocks" element={<StockList title="Каталог акций" />} />
           </Routes>
         )}
         <Footer />

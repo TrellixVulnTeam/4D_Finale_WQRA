@@ -63,7 +63,7 @@ const Navbar = (props) => {
       )}
       <div className="container">
         <div className="navbar__logo">
-          <NavLink to="/stocks">
+          <NavLink to="/news">
             <img src={Logo} alt="logo_img" width={150} />
           </NavLink>
         </div>
