@@ -7,9 +7,10 @@ import StockList from './content/StockList.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../actions/user.js'
 import { useEffect } from 'react'
+import Account from './account/Account'
+import { SearchContext } from '../context/index.js'
+import WalletList from './wallet/WalletList.jsx'
 import { getNews } from '../actions/news.js'
-// import parser from '../utils/parser.js'
-// import Parser from 'rss-parser'
 
 function App() {
   const isAuth = useSelector((state) => state.user.isAuth)
@@ -103,12 +104,13 @@ function App() {
               />
             </Routes>
           )}
-          {isAuth && ( */}
-        {/* <Routes> */}
-        {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
-        {/* <Route /> */}
-        {/* <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
-        {/* <Route path="/account" element={<Account />} />
+          {isAuth && (
+            <Routes>
+              {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
+              {/* <Route />
+              <Route path="/stocks" element={<StockList title="Каталог акций" />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/wallet" element={<WalletList/>}/>
               <Route
                 path="*"
                 element={
@@ -119,7 +121,7 @@ function App() {
                 }
               />
             </Routes>
-          )} */}
+          )}  */}
         <Footer />
       </div>
     </BrowserRouter>

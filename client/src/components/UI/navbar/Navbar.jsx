@@ -63,9 +63,9 @@ const Navbar = (props) => {
       )}
       <div className="container">
         <div className="navbar__logo">
-          {/* <NavLink to="/stocks">
+          <NavLink to="/stocks">
             <img src={Logo} alt="logo_img" width={150} />
-          </NavLink> */}
+          </NavLink>
         </div>
 
         <div className="navbar__search">
