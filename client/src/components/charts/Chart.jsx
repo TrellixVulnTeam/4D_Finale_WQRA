@@ -51,6 +51,7 @@ const Chart = (props) => {
       <div className='balance'>
         <div className='balance__info'>Баланс:</div>
         <div className='balance__number'>14000</div>
+        <div ><button className='button button__normal '>Изменить баланс</button></div>
       </div>
     </div>
   )
