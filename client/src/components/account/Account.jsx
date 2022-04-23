@@ -9,11 +9,7 @@ const Account = (props) => {
   const [value, setValue] = useState()
 
   return (
-    <div>
-      {/* <div className="account"> */}
-      {/* <div className="header">Профиль</div>
-      <Account_containerItem /> */}
-      <div className="stockList">
+      <div className="account">
         <div className="title">{props.title}</div>
         <div className="wrapper">
           <div className="container1">
@@ -114,7 +110,6 @@ const Account = (props) => {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 
