@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Play';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/play/v16/6aez4K2oVqwIjtI.ttf) format('truetype');
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e9eef2;
+  position: relative;
+  height: 100%;
+}
+#root {
+  width: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.wrap {
+  width: 100;
+  display: flex;
+  flex-direction: column;
+}
+.page404 {
+  text-align: center;
+  font-size: 144px;
+  font-family: 'Play';
+}
+.page404__container {
+  align-items: center;
+  height: 75vh;
+  width: 60vw;
+}
+.page404_num {
+  text-align: center;
+  font-size: 300px;
+  font-family: 'Play';
+}

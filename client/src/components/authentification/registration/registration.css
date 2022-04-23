@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Play';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/play/v16/6aez4K2oVqwIjtI.ttf) format('truetype');
+}
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  align-self: center;
+  font-size: 20px;
+  font-family: 'Exo 2', 'Arial';
+  color: #ffffff;
+  z-index: 1;
+}
+.registration__header {
+  font-size: 40px;
+  font-family: 'Play';
+  color: #2be9d9;
+  margin-bottom: 40px;
+}
+.registration__input {
+  margin-bottom: 40px;
+}
+.registration__input_name {
+  margin-bottom: 8px;
+}
+.registration__button {
+  border: none;
+  font-size: 16px;
+  font-family: 'Exo 2', 'Arial';
+  color: #000000;
+  background-color: #2be9d9;
+  border-radius: 10px;
+  padding: 12px 36px;
+  margin: 0px 0px 0px 0px;
+  width: 50%;
+  align-self: revert;
+}
