@@ -6,9 +6,7 @@ import Footer from './UI/footer/Footer.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../actions/user.js'
 import { useEffect } from 'react'
-import Account from './account/Account'
-import { SearchContext } from '../context/index.js'
-import WalletList from './wallet/WalletList.jsx'
+import News from './news/News.jsx'
 import { getNews } from '../actions/news.js'
 
 function App() {
@@ -45,6 +43,25 @@ function App() {
     setNews(data)
   }
 
+  // const news = [
+  //   {
+  //     items: [
+  //       {
+  //         title: 'В Госдепе отказались отвечать на вопрос о визите Блинкена в Киев',
+  //         content:
+  //           'Госдепартамент США отказался комментировать заявле…ретарь США Энтони Блинкен посетит Киев 24 апреля.',
+  //       },
+  //       {
+  //         title: 'Зеленский сообщил о визите Блинкена и Остина в Киев',
+  //         content:
+  //           'Глава Госдепа США Энтони Блинкен и глава Миноборон…о возможности их визита сообщало издание Politico',
+  //       },
+  //     ],
+  //     title: 'www.rbc.ru',
+  //     link: 'https://www.rbc.ru',
+  //   },
+  // ]
+
   return (
     // <SearchContext.Provider
     //   value={{
@@ -58,7 +75,9 @@ function App() {
         <button onClick={getAllNews}>draw</button>
         {news &&
           news.forEach((element) => {
-            element.items.map((element) => <div key={element.title}> {element.content} </div>)
+            element.items.map((element) => (
+              <News title={element.title} content={element.content} key={element.title}></News>
+            ))
           })}
         {/* <Routes>
           <Route path="/" element={<Navigate to="/stocks" />}></Route>
@@ -84,7 +103,7 @@ function App() {
           {isAuth && (
             <Routes>
               {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
-              {/* <Route />
+        {/* <Route />
               <Route path="/stocks" element={<StockList title="Каталог акций" />} />
               <Route path="/account" element={<Account />} />
               <Route path="/wallet" element={<WalletList/>}/>
