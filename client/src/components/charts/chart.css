@@ -29,12 +29,8 @@
 }
 .status__string {
   width: 65%;
+  padding-left: 2%;
   color: #000000;
-}
-.status__button {
-  display: flex;
-  width: 25%;
-  margin-left: auto;
 }
 .role {
   padding: 1% 2%;
@@ -50,16 +46,15 @@
   width: 20%;
   display: block;
   margin-right: auto;
+  padding-left: 2%;
   color: #000000;
 }
 .role__checkbox {
   width: 45%;
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
   color: #000000;
-}
-.role__button {
-  width: 25%;
 }
 .balance {
   padding: 1% 2%;
@@ -71,6 +66,7 @@
   width: 10%;
 }
 .balance__number {
-  width: 90%;
+  width: 55%;
+  padding-left: 2%;
   color: #000000;
 }
