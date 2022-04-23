@@ -30,12 +30,12 @@ function App() {
       <BrowserRouter>
         <div className="app">
           <Navbar />
-          {!isAuth && (
-            <Routes>
-              {/* <Route path="/" element={<Navigate to="/stocks" />}></Route>
+          {/* {!isAuth && (
+            <Routes> */}
+          {/* <Route path="/" element={<Navigate to="/stocks" />}></Route>
               <Route />
               <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
-
+          {/* 
               <Route
                 path="*"
                 element={
@@ -47,12 +47,12 @@ function App() {
               />
             </Routes>
           )}
-          {isAuth && (
-            <Routes>
-              {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
-              <Route />
-              {/* <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
-              <Route path="/account" element={<Account />} />
+          {isAuth && ( */}
+          {/* <Routes> */}
+          {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
+          {/* <Route /> */}
+          {/* <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
+          {/* <Route path="/account" element={<Account />} />
               <Route
                 path="*"
                 element={
@@ -63,7 +63,7 @@ function App() {
                 }
               />
             </Routes>
-          )}
+          )} */}
           <Footer />
         </div>
       </BrowserRouter>
