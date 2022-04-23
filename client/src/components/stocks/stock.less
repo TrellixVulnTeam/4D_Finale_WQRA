@@ -1,0 +1,68 @@
+@import '../../styles/colors/colors';
+@import '../../styles/fonts/fonts';
+
+.stock {
+  display: flex;
+  border-radius: 5px;
+  background-color: @--main-grey-color;
+  font-size: @--button-font-size;
+  font-family: @font-family;
+  color: @--main-text-color;
+  padding: 2% 2%;
+  margin-top: 0.7%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11.9%;
+  flex-direction: column;
+
+  //   float: left;
+  //   width: 51%;
+
+  &__plank {
+    flex-direction: row;
+  }
+
+  &__index {
+    width: 6%;
+    font-size: 12px;
+    top: 50%;
+  }
+
+  &__name {
+    width: 20%;
+  }
+
+  &__cost {
+    width: 23%;
+  }
+  &__change {
+    color: @--green-color;
+    width: 19%;
+  }
+  &__counter {
+    width: 12.1%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1%;
+
+    // &__less {
+    //   // vertical-align: middle;
+    // }
+    &__more {
+      align-items: flex-end;
+      // vertical-align: middle;
+    }
+  }
+  &__button {
+    width: 14.8%;
+  }
+  &__arrow {
+    width: 5.1%;
+    padding-left: 2%;
+    margin-top: 1%;
+  }
+
+  .count {
+    color: @--button-text-color;
+  }
+}

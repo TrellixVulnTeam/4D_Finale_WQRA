@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Navbar from './UI/navbar/Navbar.jsx'
 import './App.css'
 import Footer from './UI/footer/Footer.jsx'
-// import StockList from './content/StockList.jsx'
+import StockList from './content/StockList.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../actions/user.js'
 import { useEffect } from 'react'
@@ -32,9 +32,9 @@ function App() {
           <Navbar />
           {!isAuth && (
             <Routes>
-              {/* <Route path="/" element={<Navigate to="/stocks" />}></Route>
+              <Route path="/" element={<Navigate to="/stocks" />}></Route>
               <Route />
-              <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
+              <Route path="/stocks" element={<StockList title="Каталог акций" />} />
 
               <Route
                 path="*"
@@ -51,7 +51,7 @@ function App() {
             <Routes>
               {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
               <Route />
-              {/* <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
+              <Route path="/stocks" element={<StockList title="Каталог акций" />} />
               <Route path="/account" element={<Account />} />
               <Route
                 path="*"

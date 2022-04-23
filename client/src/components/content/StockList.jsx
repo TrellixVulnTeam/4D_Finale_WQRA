@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 // import Sorting from '../sorting/Sorting.jsx'
-// import Panel from '../panel/Panel.jsx'
+import Panel from '../panel/Panel.jsx'
 import './stocklist.css'
-// import Stock from '../stocks/Stock.jsx'
+import Stock from '../stocks/Stock.jsx'
 import { useContext } from 'react'
 import { SearchContext } from '../../context/index.js'
 import { buyStock } from '../../actions/user.js'
@@ -48,14 +48,14 @@ const StockList = (props) => {
       <div className="container2">
         <div className="list">
           {/* <Sorting /> */}
-          {/* <Panel className="panel" /> */}
+          <Panel className="panel" />
           {isStocksLoading ? (
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40 }}>Акции загружаются...</div>
           ) : (
             <></>
           )}
-          {/* {stocks &&
-            stocks.map((stock) => <Stock stock={stock} function={buyStock} key={stock.symbol} buttonText="Купить" />)} */}
+          {stocks &&
+            stocks.map((stock) => <Stock stock={stock} function={buyStock} key={stock.symbol} buttonText="Купить" />)}
         </div>
       </div>
     </div>
