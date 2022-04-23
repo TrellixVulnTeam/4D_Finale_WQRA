@@ -26,42 +26,24 @@ function App() {
     const data = await Promise.all(
       resources.map(async (item, index) => {
         let response = await getNews(item)
-        const title = response.title
-        const link = response.link
+        console.log(response)
         const data = response.items
         const items = await data.map((item) => {
           return {
-            // number: index + 1,
             title: item.title,
             content: item.content,
+            link: item.link,
+            pubDate: item.pubDate,
           }
         })
-        return { title, link, items }
+        return { title: response.title, link: response.link, items }
       })
     )
-    console.log(data)
+    // console.log('shrump', data)
     setNews(data)
   }
 
-  // const news = [
-  //   {
-  //     items: [
-  //       {
-  //         title: 'В Госдепе отказались отвечать на вопрос о визите Блинкена в Киев',
-  //         content:
-  //           'Госдепартамент США отказался комментировать заявле…ретарь США Энтони Блинкен посетит Киев 24 апреля.',
-  //       },
-  //       {
-  //         title: 'Зеленский сообщил о визите Блинкена и Остина в Киев',
-  //         content:
-  //           'Глава Госдепа США Энтони Блинкен и глава Миноборон…о возможности их визита сообщало издание Politico',
-  //       },
-  //     ],
-  //     title: 'www.rbc.ru',
-  //     link: 'https://www.rbc.ru',
-  //   },
-  // ]
-
+  // console.log(news)
   return (
     // <SearchContext.Provider
     //   value={{
@@ -72,13 +54,18 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <Navbar />
-        <button onClick={getAllNews}>draw</button>
-        {news &&
-          news.forEach((element) => {
-            element.items.map((element) => (
-              <News title={element.title} content={element.content} key={element.title}></News>
-            ))
-          })}
+        {/*  */}
+        {news.length != 0 ? (
+          <div>
+            {news[0].items.map((item) => (
+              <News title={item.title} content={item.content} link={item.link} key={item.title} />
+            ))}
+            {/* <News title={news[0].items[0].title} content={news[0].items[0].content} /> */}
+          </div>
+        ) : (
+          <div>Загружается</div>
+        )}
+
         {/* <Routes>
           <Route path="/" element={<Navigate to="/stocks" />}></Route>
           <Route />
