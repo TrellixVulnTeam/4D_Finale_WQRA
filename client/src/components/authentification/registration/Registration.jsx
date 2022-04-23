@@ -5,12 +5,15 @@ import Input from '../../UI/input/Input'
 import { registration } from '../../../actions/user'
 import '../../UI/input/input.css'
 import ModalBoxDeposit from '../../UI/ModalBox/ModalBoxDeposit'
+import { useDispatch } from 'react-redux'
+import { login } from '../../../actions/user'
 
 const Registration = (props) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
   const [modalBoxDeposit, setmodalBoxDeposit] = useState(false)
+  const dispatch = useDispatch()
   return (
     <div className="registration">
       <ModalBoxDeposit visible={modalBoxDeposit} setVisible={setmodalBoxDeposit}>
@@ -37,13 +40,15 @@ const Registration = (props) => {
           setValue={setRepeatPassword}
           type="password"
           placeholder="********"
-        />{' '}
+        />
       </div>
       <button
         className="button button__normal registration__button"
-        onClick={() => {
+        onClick={async () => {
           if (password === repeatPassword) {
-            registration(username, password)
+            const res = await registration(username, password)
+
+            if (res === 'Пользователь был успешно зарегистрирован') dispatch(login(username, password))
 
             props.sVisible(false)
           } else setmodalBoxDeposit(true)
