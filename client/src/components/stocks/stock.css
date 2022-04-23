@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/exo2/v19/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Play';
@@ -23,80 +23,22 @@
   margin-top: 0.7%;
   align-items: center;
   justify-content: center;
-  margin-left: 11.9%;
-  flex-direction: row;
 }
-
-.stock__number{
-  margin-right: 30px;
-  color: #394249;
-  font-size: 20px;
-  font-family: 'Exo 2', 'Arial';
-}
-
 .stock__plank {
-  display: flex;
   flex-direction: row;
-  width: 1050px;
-  position:relative;
-  right: 30px;
-}
-.stock__index {
-  width: 6%;
-  font-size: 12px;
-  top: 50%;
 }
 .stock__name {
-  width: 20%;
-}
-.stock__cost {
-  width: 23%;
+  width: 50%;
 }
 .stock__change {
   color: #a0e28d;
-  width: 19%;
-}
-.stock__counter {
-  width: 12.1%;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 1%;
-}
-.stock__counter__more {
-  align-items: flex-end;
-  display: block;
-}
-.stock__button {
-  width: 14.8%;
+  width: 40%;
 }
 .stock__arrow {
-  width: 5.1%;
+  text-decoration: none !important;
+  border: none !important;
+  background-color: #6c7175;
+  width: 10%;
   padding-left: 2%;
   margin-top: 1%;
-  background: none;
-  appearance: none;
-  writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  color: none;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    align-items: flex-start;
-    cursor: default;
-    box-sizing: border-box;
-    background-color: none;
-    margin: 0em;
-    padding: 1px 6px;
-    border-width: none;
-    border-style: none;
-    border-color: none;
-    border-image: none;
-}
-.stock .count {
-  color: #000000;
 }

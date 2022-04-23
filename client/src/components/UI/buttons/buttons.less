@@ -11,12 +11,24 @@
   &__normal {
     background-color: @--main-button-color;
     color: @--button-text-color;
+    &:hover {
+      background-color: @--hover-button-color;
+      color: @--button-text-color;
+    }
   }
 
-  &:hover {
-    background-color: @--hover-button-color;
-    color: @--button-text-color;
+  &__block {
+    background-color: @--red-color;
+
+    &:hover {
+      background-color: #ffc4ba;
+    }
+
+    &:active {
+      background-color: #d26251;
+    }
   }
+
   &__normal:active {
     background-color: @--down-button-color;
     color: @--main-text-color;

@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/exo2/v19/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Play';
@@ -20,14 +20,10 @@
   font-family: 'Exo 2', 'Arial';
   color: #ffffff;
   padding: 1% 2%;
-  margin-left: 12%;
 }
 .name {
-  width: 26%;
-}
-.cost {
-  width: 23%;
+  width: 50%;
 }
 .change {
-  width: 51%;
+  width: 50%;
 }

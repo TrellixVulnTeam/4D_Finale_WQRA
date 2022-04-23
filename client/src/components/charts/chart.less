@@ -1,0 +1,79 @@
+@import '../../styles/colors/colors';
+@import '../../styles/fonts/fonts';
+
+.stockChart {
+  margin-left: 20px;
+  // width: 88.1%;
+  height: 25vh;
+  display: block;
+  background-color: #6c7175;
+  color: @--main-text-color;
+}
+.status {
+  padding: 1% 2%;
+  display: flex;
+  align-items: center;
+}
+.status__info {
+  width: 10%;
+}
+
+.status__string {
+  width: 65%;
+  color: @--button-text-color;
+}
+
+.status__button {
+  display: flex;
+  width: 25%;
+  // float: right;
+  margin-left: auto;
+  // margin-left: 80%;
+  // right: 0;
+}
+
+.role {
+  padding: 1% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info {
+    width: 10%;
+    display: flex;
+  }
+  &__list {
+    width: 20%;
+    display: block;
+    margin-right: auto;
+    color: @--button-text-color;
+  }
+
+  &__checkbox {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    color: @--button-text-color;
+  }
+
+  &__button {
+    width: 25%;
+    // margin-left: auto;
+  }
+}
+
+.balance {
+  padding: 1% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info {
+    width: 10%;
+  }
+
+  &__number {
+    width: 90%;
+    color: @--button-text-color;
+  }
+}
