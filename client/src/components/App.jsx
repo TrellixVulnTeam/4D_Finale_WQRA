@@ -8,6 +8,9 @@ import { auth } from '../actions/user.js'
 import { useEffect } from 'react'
 import News from './news/News.jsx'
 import { getNews } from '../actions/news.js'
+import StockList from './content/StockList'
+import Account from './account/Account'
+import WalletList from './wallet/WalletList'
 
 function App() {
   const isAuth = useSelector((state) => state.user.isAuth)
@@ -54,57 +57,40 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <Navbar />
-        {/*  */}
-        {news.length != 0 ? (
-          <div>
-            {news[0].items.map((item) => (
-              <News title={item.title} content={item.content} link={item.link} key={item.title} />
-            ))}
-            {/* <News title={news[0].items[0].title} content={news[0].items[0].content} /> */}
-          </div>
-        ) : (
-          <div>Загружается</div>
+        {!isAuth && (
+          <Routes>
+            <Route path="/" element={<Navigate to="/news" />} />
+            <Route path="/news" element={<StockList title="Каталог акций" />} />
+            <Route
+              path="*"
+              element={
+                <div className="page404__container">
+                  <p className="page404_num">404</p>
+                  <p className="page404">There's nothing here!</p>
+                </div>
+              }
+            />
+          </Routes>
         )}
-
-        {/* <Routes>
-          <Route path="/" element={<Navigate to="/stocks" />}></Route>
-          <Route />
-          <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
-        {/* {!isAuth && (
-            <Routes> */}
-        {/* <Route path="/" element={<Navigate to="/stocks" />}></Route>
-              <Route />
-              <Route path="/stocks" element={<StockList title="Каталог акций" />} /> */}
-        {/* 
-              <Route
-                path="*"
-                element={
-                  <div className="page404__container">
-                    <p className="page404_num">404</p>
-                    <p className="page404">There's nothing here!</p>
-                  </div>
-                }
-              />
-            </Routes>
-          )}
-          {isAuth && (
-            <Routes>
-              {/* <Route path="/" element={<Navigate to="/stocks" />}></Route> */}
-        {/* <Route />
-              <Route path="/stocks" element={<StockList title="Каталог акций" />} />
-              <Route path="/account" element={<Account />} />
-              <Route path="/wallet" element={<WalletList/>}/>
-              <Route
-                path="*"
-                element={
-                  <div className="page404__container">
-                    <p className="page404_num">404</p>
-                    <p className="page404">There's nothing here!</p>
-                  </div>
-                }
-              />
-            </Routes>
-          )}  */}
+        {isAuth && (
+          <Routes>
+            <Route path="/" element={<Navigate to="/stocks" />} />
+            <Route path="/stocks" element={<StockList title="Каталог акций" />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/wallet" element={<WalletList />} />
+            <Route
+              path="*"
+              element={
+                <div className="page404__container">
+                  <p className="page404_num">404</p>
+                  <p className="page404">There's nothing here!</p>
+                </div>
+              }
+            />
+            <Route path="/" element={<Navigate to="/stocks" />} />
+            <Route path="/stocks" element={<StockList title="Каталог акций" />} />
+          </Routes>
+        )}
         <Footer />
       </div>
     </BrowserRouter>

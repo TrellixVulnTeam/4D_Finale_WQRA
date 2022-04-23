@@ -26,6 +26,18 @@ const StockList = (props) => {
   }, [])
 
   return (
+    // {news.length != 0 ? (
+    //   <div>
+    //     {news[0].items.map((item) => (
+    //       <News title={item.title} content={item.content} link={item.link} key={item.title} />
+    //     ))}
+    //     {news[1].items.map((item) => (
+    //       <News title={item.title} content={item.content} link={item.link} key={item.title} />
+    //     ))}
+    //   </div>
+    // ) : (
+    //   <div>Загружается</div>
+    // )}
     <div className="stockList">
       <div className="title">{props.title}</div>
       <div className="wrapper">
