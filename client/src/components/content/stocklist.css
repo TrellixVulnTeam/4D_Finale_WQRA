@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/exo2/v19/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Play';
@@ -19,8 +19,69 @@
   padding: 0 55px 0 0;
   font-family: 'Exo 2', 'Arial';
 }
-.container2 {
+.wrapper {
+  display: flex;
+}
+.container1 {
+  width: 25%;
+  display: block;
   align-items: center;
+  margin-left: 5%;
+  padding-right: 7%;
+}
+.container2 {
+  width: 50%;
+  align-items: center;
+}
+.container3 {
+  width: 25%;
+  align-items: center;
+  margin-right: 5%;
+  padding-left: 7%;
+}
+.filter__status {
+  margin-bottom: 10%;
+}
+.filter__roles {
+  margin-bottom: 10%;
+}
+.filter__balance {
+  margin-bottom: 10%;
+}
+.status__checkbox {
+  display: block;
+  margin-top: 5%;
+}
+.check1 {
+  display: flex;
+  width: 40%;
+}
+.check2 {
+  display: flex;
+  width: 40%;
+}
+.check3 {
+  display: flex;
+  width: 40%;
+}
+.checkbox {
+  margin-right: 10%;
+}
+.min_max {
+  display: flex;
+  margin-top: 5%;
+}
+.input12 {
+  display: block;
+  width: 50%;
+}
+.filter__button {
+  display: flex;
+}
+.form {
+  background-color: #6c7175;
+  border-radius: 5%;
+  padding: 10%;
 }
 .title {
   left: 19%;
@@ -31,16 +92,21 @@
   font-family: 'Play';
   width: auto;
 }
-.list {
-  margin: 2% 19.5% 2% 12%;
-  padding-left: 6%;
+.login {
+  margin-bottom: 5%;
+}
+.password {
+  margin-bottom: 5%;
+}
+.give_roles {
+  margin-bottom: 5%;
 }
 .panel {
   justify-content: center;
 }
 .number {
   float: left;
-  margin-left: 10%;
+  width: 20px;
   margin-top: 0.7%;
   padding-top: 3%;
   font-size: 16px;
