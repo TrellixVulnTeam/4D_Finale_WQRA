@@ -22,7 +22,6 @@ const Currency = () => {
       currency: Object.keys(response.data.rates),
       value: Object.values(response.data.rates),
     })
-    console.log(data.rates)
     setIsLoading(false)
     return {
       base: data.base,
@@ -31,16 +30,13 @@ const Currency = () => {
     }
   }
 
-  console.log(data)
-  console.log(isLoading)
-
   return (
     <div>
       {isLoading === false ? (
         <div className="list">
           <Rate currency={data.base} />
           {data.currency.map((rate, index) => (
-            <Rate currency={data.currency[index]} value={Number(data.value[index])} key={rate} />
+            <Rate currency={data.currency[index]} value={data.value[index]} key={rate} />
           ))}
         </div>
       ) : (

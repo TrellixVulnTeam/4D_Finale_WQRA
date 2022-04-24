@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ButtonSwith = ({ name, ...props }) => {
+const ButtonSwith = ({ children, ...props }) => {
   return (
     <button className={props.className} onClick={props.onClick}>
-      {name}
+      {children}
     </button>
   )
 }
