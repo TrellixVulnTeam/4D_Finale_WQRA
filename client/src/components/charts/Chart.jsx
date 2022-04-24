@@ -24,7 +24,6 @@ const Chart = ({ user }) => {
         <div className="status__button">
           <ButtonSwith
             className={buttBlock}
-            name={btnName}
             onClick={() => {
               if (buttBlock === 'button button__block ') {
                 setButtbuttBlock('button button__normal ')
@@ -35,7 +34,7 @@ const Chart = ({ user }) => {
               }
             }}
           >
-            Заблокировать
+            {btnName}
           </ButtonSwith>
         </div>
       </div>

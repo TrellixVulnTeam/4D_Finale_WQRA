@@ -12,11 +12,11 @@ const StockList = (props) => {
     getAllNews()
     setInterval(() => {
       getAllNews()
-    }, 10000)
+    }, 120000)
   }, [])
 
   const resources = [
-    'http://static.feed.rbc.ru/rbc/logical/footer/news.rss',
+    // 'http://static.feed.rbc.ru/rbc/logical/footer/news.rss',
     'https://ria.ru/export/rss2/archive/index.xml',
   ]
   async function getAllNews() {
@@ -36,59 +36,56 @@ const StockList = (props) => {
         return { title: response.title, link: response.link, items }
       })
     )
-    // console.log('shrump', data)
     setNews(data)
   }
-
+  console.log(news)
   return (
     <div className="main_page">
       <div className="title">{props.title}</div>
       <div className="wrapper">
-        
-      <div className="container1">
-        <div className="filter__status">
-          <div style={{ fontSize: '30px' }}>Категории</div>
-          <div className="status__checkbox">
-            <div className="check1">
-              <CheckBox className="checkbox" />
-              <div>Политика</div>
-            </div>
-            <div className="check2">
-              <CheckBox className="checkbox" />
-              <div>Ценные бумаги</div>
-            </div>
-            <div className="check3">
-              <CheckBox className="checkbox" />
-              <div>Валютный рынок</div>
+        <div className="container1">
+          <div className="filter__status">
+            <div style={{ fontSize: '30px' }}>Категории</div>
+            <div className="status__checkbox">
+              <div className="check1">
+                <CheckBox className="checkbox" />
+                <div>Политика</div>
+              </div>
+              <div className="check2">
+                <CheckBox className="checkbox" />
+                <div>Ценные бумаги</div>
+              </div>
+              <div className="check3">
+                <CheckBox className="checkbox" />
+                <div>Валютный рынок</div>
+              </div>
             </div>
           </div>
+          <div className="filter__button">
+            <div className="button button__normal">Найти</div>
+          </div>
         </div>
-        <div className="filter__button">
-          <div className="button button__normal">Найти</div>
-        </div>
-      </div>
 
-      <div className='container2'>
-        {/* <div> */}
+        <div className="container2">
+          {/* <div> */}
           {news.length != 0 ? (
-            <div className='list'>
+            <div className="list">
               {news[0].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
               ))}
-              {news[1].items.map((item) => (
+              {/* {news[1].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
-              ))}
+              ))} */}
             </div>
           ) : (
             <div>Загружается</div>
           )}
-        {/* </div> */}
-      </div>
+          {/* </div> */}
+        </div>
 
       <div className='container3'>
         <Currency/>
       </div>
-    </div>
     </div>
   )
 }

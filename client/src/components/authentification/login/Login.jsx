@@ -32,7 +32,7 @@ const Login = (props) => {
         <Input className="auth" value={password} setValue={setpassword} type="password" placeholder="********" />{' '}
       </div>
       <button
-        className="login__button"
+        className="button button__normal login__button"
         onClick={async () => {
           await dispatch(login(username, password))
           console.log(store.getState(setUser).user.isAuth)

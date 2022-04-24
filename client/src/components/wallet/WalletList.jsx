@@ -3,25 +3,26 @@ import React, { useEffect, useState } from 'react'
 import Balance from '../balance/Balance'
 import Convert from '../convert/Convert'
 import axios from 'axios'
-const serverAddress = 'https://gentle-sea-62964.herokuapp.com'
+const serverAddress = 'https://afternoon-gorge-59782.herokuapp.com'
+// const serverAddress = 'http://localhost:5000'
 
 const WalletList = (props) => {
-  // const [transactions, setTransactions] = useState([])
+  const [transactions, setTransactions] = useState([])
 
-  // useEffect(() => getTransactions(), [])
+  useEffect(() => getTransactions(), [])
 
-  // const getTransactions = async () => {
-  //   try {
-  //     const responce = await axios.get(`${serverAddress}/api/auth/transactions`, {
-  //       headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
-  //     })
-  //     responce.data.transactions.reverse()
-  //     setTransactions(responce.data.transactions)
-  //     console.log(transactions)
-  //   } catch (e) {
-  //     console.log(e)
-  //   }
-  // }
+  const getTransactions = async () => {
+    try {
+      const responce = await axios.get(`${serverAddress}/transactions`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
+      })
+      responce.data.transactions.reverse()
+      setTransactions(responce.data.transactions)
+      console.log(transactions)
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   return (
     <div className="stockList">
