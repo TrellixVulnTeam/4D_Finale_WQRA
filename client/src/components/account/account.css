@@ -58,15 +58,12 @@
 }
 .check1 {
   display: flex;
-  width: 40%;
 }
 .check2 {
   display: flex;
-  width: 40%;
 }
 .check3 {
   display: flex;
-  width: 40%;
 }
 .checkbox {
   margin-right: 10%;
@@ -88,6 +85,8 @@
   padding: 10%;
 }
 .title {
+  display: flex;
+  justify-content: space-between;
   left: 19%;
   margin-top: 9vh;
   margin-left: 19%;

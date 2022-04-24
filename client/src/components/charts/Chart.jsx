@@ -61,7 +61,7 @@ const Chart = ({ user }) => {
         <div className="balance__number">{user.balance}</div>
         <div>
           <button className="button button__normal ">Изменить баланс</button>
-        </div>
+        </div> 
       </div>
     </div>
   )

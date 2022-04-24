@@ -43,6 +43,7 @@ const StockList = (props) => {
     <div className="main_page">
       <div className="title">{props.title}</div>
       <div className="wrapper">
+        
       <div className="container1">
         <div className="filter__status">
           <div style={{ fontSize: '30px' }}>Категории</div>
@@ -84,38 +85,10 @@ const StockList = (props) => {
       </div>
 
       <div className='container3'>
-        <div className="form">
-         <div className="login">
-           <div>Логин</div>
-           <input></input>
-         </div>
-         <div className="password">
-           <div>Пароль</div>
-           <input></input>
-         </div>
-         <div className="give_roles">
-           <div>Назначить роли</div>
-           <div className="status__checkbox">
-             <div className="check1">
-               <CheckBox className="checkbox" />
-               <div>Читатель</div>
-             </div>
-             <div className="check2">
-               <CheckBox className="checkbox" />
-               <div>Клиент</div>
-             </div>
-             <div className="check3">
-               <CheckBox className="checkbox" />
-               <div>Администратор</div>
-             </div>
-           </div>
-         </div>
-         <div className="filter__button">
-           <div className="button button__normal">Создать</div>
-         </div>
+        <div className='currency__card'>
+          
+        </div>
       </div>
-
-    </div>
     </div>
     </div>
   )
