@@ -13,6 +13,9 @@ import { NavLink } from 'react-router-dom'
 
 const Account = (props) => {
   const [users, setUsers] = useState([])
+  // const [visitorRole, setVisitorRole] = useState(false)
+  // const [userRole, setUserRole] = useState(false)
+  // const [adminRole, setAdminRole] = useState(false)
   useEffect(() => {
     getAllUsers()
   }, [])
@@ -21,6 +24,11 @@ const Account = (props) => {
     const data = await getUsers()
     console.log(data)
     setUsers(data)
+  }
+
+  function check(state, setState) {
+    setState(!state)
+    console.log(state)
   }
 
   async function giveRoles(username, roles) {
@@ -63,15 +71,15 @@ const Account = (props) => {
                 <div style={{ fontSize: '30px' }}>Роли</div>
                 <div className="status__checkbox">
                   <div className="check1">
-                    <CheckBox className="checkbox" />
+                    <CheckBox className="checkbox" check={check} />
                     <div>Читатель</div>
                   </div>
                   <div className="check2">
-                    <CheckBox className="checkbox" />
+                    <CheckBox className="checkbox" check={check} />
                     <div>Клиент</div>
                   </div>
                   <div className="check3">
-                    <CheckBox className="checkbox" />
+                    <CheckBox className="checkbox" check={check} />
                     <div>Администратор</div>
                   </div>
                 </div>
@@ -136,7 +144,7 @@ const Account = (props) => {
                     <div className="check2">
                       <CheckBox className="checkbox" />
                       <div>Клиент</div>
-                    </div> 
+                    </div>
                     <div className="check3">
                       <CheckBox type="admin" check="" className="checkbox" />
                       <div>Администратор</div>
