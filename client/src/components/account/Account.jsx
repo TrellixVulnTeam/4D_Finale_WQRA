@@ -136,7 +136,7 @@ const Account = (props) => {
                     <div className="check2">
                       <CheckBox className="checkbox" />
                       <div>Клиент</div>
-                    </div>
+                    </div> 
                     <div className="check3">
                       <CheckBox type="admin" check="" className="checkbox" />
                       <div>Администратор</div>

@@ -12,10 +12,9 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/play/v16/6aez4K2oVqwIjtI.ttf) format('truetype');
 }
-.list {
-  background-color: aqua;
+.svodka_valut {
+  padding: 10%;
   border-radius: 5%;
   background-color: #394249;
   width: 100%;
-  height: 20vh;
 }

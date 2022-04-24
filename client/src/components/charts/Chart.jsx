@@ -44,7 +44,7 @@ const Chart = ({ user }) => {
           <div>Читатель</div>
           <div>Клиент</div>
         </div>
-        <div className="role__checkbox">
+        <div className="role__checkbox"> 
           <CheckBox />
           <div>Читатель</div>
           <CheckBox />
@@ -56,9 +56,9 @@ const Chart = ({ user }) => {
           <button className="button button__normal ">Добавить роль</button>
         </div>
       </div>
-      <div className="balance">
-        <div className="balance__info">Баланс:</div>
-        <div className="balance__number">{user.balance}</div>
+      <div className="userbalance">
+        <div className="userbalance__info">Баланс:</div>
+        <div className="userbalance__number">{user.balance}</div>
         <div>
           <button className="button button__normal ">Изменить баланс</button>
         </div> 

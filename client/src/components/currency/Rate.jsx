@@ -8,7 +8,7 @@ const Rate = (props) => {
   return (
     <div className='rate'>
       <div className='curr'>{props.currency}</div>
-      <div>{props.value}</div>
+      <div className='val'>{props.value}</div>
     </div>
   )
 }

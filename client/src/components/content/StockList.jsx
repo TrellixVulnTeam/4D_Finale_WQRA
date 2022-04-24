@@ -69,6 +69,7 @@ const StockList = (props) => {
         <div className="container2">
           {/* <div> */}
           {news.length != 0 ? (
+<<<<<<< Updated upstream
             <div className="list">
               {news[0].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
@@ -76,6 +77,15 @@ const StockList = (props) => {
               {/* {news[1].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
               ))} */}
+=======
+            <div className='list'>
+              {/* {news[0].items.map((item) => (
+                <News title={item.title} content={item.content} href={item.link} key={item.link} />
+              ))} */}
+              {news[1].items.map((item) => (
+                <News title={item.title} content={item.content} href={item.link} key={item.link} />
+              ))}
+>>>>>>> Stashed changes
             </div>
           ) : (
             <div>Загружается</div>

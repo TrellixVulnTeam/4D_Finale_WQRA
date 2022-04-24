@@ -34,10 +34,17 @@ const Currency = () => {
   return (
     <div>
       {isLoading === false ? (
+<<<<<<< Updated upstream
         <div className="list">
           <Rate currency={data.base} />
           {data.currency.map((rate, index) => (
             <Rate currency={data.currency[index]} value={data.value[index]} key={rate} />
+=======
+        <div className="svodka_valut">
+          <Rate currency={data.base} value="1"/>
+          {data.currency.map((rate, index)  => (
+            <Rate currency={data.currency[index]} value={Number(data.value[index])} key={rate} />
+>>>>>>> Stashed changes
           ))}
         </div>
       ) : (
