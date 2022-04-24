@@ -8,6 +8,7 @@ import Stock from '../stocks/Stock'
 import { getUsers } from '../../actions/user'
 import { store } from '../../reducers/index'
 import { setUser } from '../../reducers/userReducer'
+import { manageRoles } from '../../actions/roles'
 
 const Account = (props) => {
   const [users, setUsers] = useState([])
@@ -19,6 +20,10 @@ const Account = (props) => {
     const data = await getUsers()
     console.log(data)
     setUsers(data)
+  }
+
+  async function giveRoles(username, roles) {
+    const response = await manageRoles(username, roles)
   }
 
   const user = store.getState(setUser).user.currentUser
@@ -122,7 +127,7 @@ const Account = (props) => {
                       <div>Клиент</div>
                     </div>
                     <div className="check3">
-                      <CheckBox className="checkbox" />
+                      <CheckBox type="admin" check="" className="checkbox" />
                       <div>Администратор</div>
                     </div>
                   </div>
