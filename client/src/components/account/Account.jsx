@@ -9,6 +9,7 @@ import { getUsers } from '../../actions/user'
 import { store } from '../../reducers/index'
 import { setUser } from '../../reducers/userReducer'
 import { manageRoles } from '../../actions/roles'
+import { NavLink } from 'react-router-dom'
 
 const Account = (props) => {
   const [users, setUsers] = useState([])
@@ -32,11 +33,17 @@ const Account = (props) => {
     <div className="account">
       {user.roles.includes('admin') ? (
         <div>
-          <div className="title" style={{fontSize:"20px", marginRight:"28%", marginLeft:"30%"}}>
-            <NavLink to style={{ textDecoration: 'none' }}>{props.title1}</NavLink>
-            <NavLink to style={{ textDecoration: 'none' }}>{props.title2}</NavLink>
-            <NavLink to style={{ textDecoration: 'none' }}>{props.title3}</NavLink>
-            </div>
+          <div className="title" style={{ fontSize: '20px', marginRight: '28%', marginLeft: '30%' }}>
+            <NavLink to style={{ textDecoration: 'none' }}>
+              {props.title1}
+            </NavLink>
+            <NavLink to style={{ textDecoration: 'none' }}>
+              {props.title2}
+            </NavLink>
+            <NavLink to style={{ textDecoration: 'none' }}>
+              {props.title3}
+            </NavLink>
+          </div>
           <div className="wrapper">
             <div className="container1">
               <div className="filter__status">
@@ -148,7 +155,7 @@ const Account = (props) => {
           <div className="header">Профиль</div>
           {/* <div className='container4'> */}
           <Account_containerItem />
-        {/* </div> */}
+          {/* </div> */}
         </div>
       )}
     </div>

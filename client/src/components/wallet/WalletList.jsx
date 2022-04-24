@@ -13,7 +13,7 @@ const WalletList = (props) => {
 
   const getTransactions = async () => {
     try {
-      const responce = await axios.get(`${serverAddress}/api/auth/transactions`, {
+      const responce = await axios.get(`${serverAddress}/transactions`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
       })
       responce.data.transactions.reverse()
