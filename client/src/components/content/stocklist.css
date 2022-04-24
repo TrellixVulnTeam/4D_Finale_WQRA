@@ -12,7 +12,7 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/play/v16/6aez4K2oVqwIjtI.ttf) format('truetype');
 }
-.stockList {
+.main_page {
   width: 100%;
   display: block;
   min-height: 75vh;
@@ -54,15 +54,12 @@
 }
 .check1 {
   display: flex;
-  width: 40%;
 }
 .check2 {
   display: flex;
-  width: 40%;
 }
 .check3 {
   display: flex;
-  width: 40%;
 }
 .checkbox {
   margin-right: 10%;
@@ -87,6 +84,7 @@
   left: 19%;
   margin-top: 9vh;
   margin-left: 19%;
+  margin-bottom: 5vh;
   color: #000000;
   font-size: 40px;
   font-family: 'Play';
