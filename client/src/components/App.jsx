@@ -52,7 +52,7 @@ function App() {
               <Route path="/" element={<Navigate to="/news" />} />
               <Route path="/news" element={<StockList title="Новости" />} />
               <Route path="/account" element={<Account />} />
-              <Route path="/wallet" element={<WalletList />} />
+              <Route path="/wallet" element={<WalletList title1="Ваш баланс" title2="История операций"/>} />
               <Route path="/currency" element={<Currency />} />
               <Route
                 path="*"

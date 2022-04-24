@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/exo2/v18/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/exo2/v19/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Play';
@@ -19,19 +19,21 @@
   padding: 0;
   font-family: 'Exo 2', 'Arial';
 }
-.container2 {
-  align-items: center;
-}
 .title {
+  display: block;
+  justify-content: space-between;
   left: 19%;
-  margin-top: 5vh;
+  margin-top: 9vh;
   margin-left: 19%;
   color: #000000;
   font-size: 40px;
   font-family: 'Play';
-  width: auto;
 }
 .list {
+  margin: 0% 18.5% 2% 12%;
+  padding-left: 6%;
+}
+.flow_list {
   margin: 0% 18.5% 2% 12%;
   padding-left: 6%;
 }

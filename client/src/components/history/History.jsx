@@ -3,7 +3,7 @@ import './history.css'
 import '../UI/buttons/buttons.css'
 
 const History = (props) => {
-  return (
+  return ( 
     <div className="history">
       <div className="history__type">{props.history.type}</div>
       <div className="history__name">{props.history.symbol}</div>

@@ -4,7 +4,9 @@ import Balance from '../balance/Balance'
 import Convert from '../convert/Convert'
 import axios from 'axios'
 import History from '../history/History'
+import "./walletList.css"
 const serverAddress = 'https://afternoon-gorge-59782.herokuapp.com'
+
 
 // const serverAddress = 'http://localhost:5000'
 
@@ -24,7 +26,7 @@ const WalletList = (props) => {
     } catch (e) {
       console.log(e)
     }
-  }
+  } 
 
   return (
     <div className="stockList">
@@ -34,15 +36,13 @@ const WalletList = (props) => {
         <Balance btnText="Снять (₽)" type={'Withdraw'} />
         <Convert btnText="Обменять" type={'Convert'} />
       </div>
-      <div className="list"></div>
       <div className="title">{props.title2}</div>
-      <div className="container2">
-        <div className="list">
+        <div className="flow_list">
           {transactions.map((history) => (
             <History history={history} key={history['_id']} />
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }
