@@ -50,7 +50,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/news" />} />
             <Route path="/news" element={<StockList title="Каталог акций" />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/account" element={<Account title1="Пользователи" title2="Новости" title3="Валюта" />} />
             <Route path="/wallet" element={<WalletList />} />
             <Route
               path="*"
