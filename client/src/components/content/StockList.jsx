@@ -3,6 +3,7 @@ import './stocklist.css'
 import News from '../news/News.jsx'
 import { getNews } from '../../actions/news.js'
 import CheckBox from '../UI/checkBox/CheckBox'
+import Currency from '../currency/Currency'
 
 const StockList = (props) => {
   const [news, setNews] = useState([])
@@ -85,9 +86,7 @@ const StockList = (props) => {
       </div>
 
       <div className='container3'>
-        <div className='currency__card'>
-          
-        </div>
+        <Currency/>
       </div>
     </div>
     </div>

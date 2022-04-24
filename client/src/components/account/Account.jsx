@@ -9,6 +9,7 @@ import { getUsers } from '../../actions/user'
 import { store } from '../../reducers/index'
 import { setUser } from '../../reducers/userReducer'
 import { manageRoles } from '../../actions/roles'
+import { NavLink } from 'react-router-dom'
 
 const Account = (props) => {
   const [users, setUsers] = useState([])
