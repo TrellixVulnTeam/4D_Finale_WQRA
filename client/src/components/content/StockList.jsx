@@ -15,7 +15,7 @@ const StockList = (props) => {
   }, [])
 
   const resources = [
-    'http://static.feed.rbc.ru/rbc/logical/footer/news.rss',
+    // 'http://static.feed.rbc.ru/rbc/logical/footer/news.rss',
     'https://ria.ru/export/rss2/archive/index.xml',
   ]
   async function getAllNews() {
@@ -72,9 +72,9 @@ const StockList = (props) => {
               {news[0].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
               ))}
-              {news[1].items.map((item) => (
+              {/* {news[1].items.map((item) => (
                 <News title={item.title} content={item.content} link={item.link} key={item.link} />
-              ))}
+              ))} */}
             </div>
           ) : (
             <div>Загружается</div>
