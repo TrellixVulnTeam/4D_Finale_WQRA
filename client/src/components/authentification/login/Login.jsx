@@ -25,7 +25,7 @@ const Login = (props) => {
       <div className="login"></div>
       <div className="login__input_name">Электронная почта</div>
       <div className="login__input">
-        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Kazanova" />{' '}
+        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Username" />{' '}
       </div>
       <div className="login__input_name">Пароль</div>
       <div className="login__input">

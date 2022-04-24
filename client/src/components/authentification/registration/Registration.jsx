@@ -26,7 +26,7 @@ const Registration = (props) => {
 
       <div className="registration__input_name">Имя пользователя</div>
       <div className="registration__input">
-        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Йоханнес" />{' '}
+        <Input className="auth" value={username} setValue={setUsername} type="text" placeholder="Username" />{' '}
       </div>
       <div className="registration__input_name">Придумайте пароль</div>
       <div className="registration__input">

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Rate from './Rate'
-import "./currency.css"
+import './currency.css'
 // const serverAddress = 'https://gentle-sea-62964.herokuapp.com'
 // const serverAddress = 'http://localhost:5000'
 
@@ -35,9 +35,9 @@ const Currency = () => {
     <div>
       {isLoading === false ? (
         <div className="svodka_valut">
-          <Rate currency={data.base} value="1"/>
-          {data.currency.map((rate, index)  => (
-            <Rate currency={data.currency[index]} value={Number(data.value[index])} key={rate} />
+          <Rate currency={data.base} value="1.0000" />
+          {data.currency.map((rate, index) => (
+            <Rate currency={data.currency[index]} value={Number(data.value[index]).toFixed(4)} key={rate} />
           ))}
         </div>
       ) : (

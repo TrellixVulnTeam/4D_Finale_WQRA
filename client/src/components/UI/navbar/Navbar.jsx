@@ -101,13 +101,13 @@ const Navbar = (props) => {
             </NavLink>
           </div>
         )}
-        {isAuth && (
+        {/* {isAuth && (
           <div className="navbar__portfolio">
             <NavLink to="/currency">
               <img src={Portfolio} alt="Валюта" width={45} />
             </NavLink>
           </div>
-        )}
+        )} */}
         {isAuth && (
           <div className="navbar__account" onClick={() => setModalBoxAcc(true)}>
             <img src={UserProfile} alt="Аккаунт" width={70} />

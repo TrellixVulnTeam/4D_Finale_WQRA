@@ -8,7 +8,6 @@ import { setUser } from '../../reducers/userReducer'
 
 const Balance = (props) => {
   const [modalBox, setModalBox] = useState(false)
-
   const currency = 'USD'
   return (
     <div className="balance">

@@ -81,10 +81,10 @@ const StockList = (props) => {
           )}
         </div>
 
-      <div className='container3'>
-        <Currency/>
+        <div className="container3">
+          <Currency />
+        </div>
       </div>
-    </div>
     </div>
   )
 }

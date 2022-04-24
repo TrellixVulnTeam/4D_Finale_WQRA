@@ -2,7 +2,7 @@
 
 ## Project specification
 
-A web application representing a full-fledged exchange. On the main page there is a list of stocks with the current price and constant updates. Also on the main page there is a search for stocks. The user can enter the name of the action he is interested in and it will be displayed on the page. For each stock, you can see a graph of changes in value. The user can register and log into the account. After that, sections such as a wallet, with the ability to track the history of changes, and a portfolio with user investments will become available. Processes such as wallet replenishment, currency conversion, buying and selling shares will also become available. If necessary, the user can log out of the account.
+The prototype of a web application for making transactions in the foreign exchange market. On the main page there is a list of news to help you make the right investment decision. For each news, the user can read the title and a brief description of the article, as well as follow the link to the source. Also on the main page there are exchange rates. The user can register and log into the account. After that, sections such as a wallet, with the ability to track the history of changes will become available. Processes such as wallet replenishment, currency conversion, buying and selling currency will also become available. If necessary, the user can log out of the account. There are also roles for users. To date there are User role and Admin role. Admin's account has much more functionality. Admin can see the list of all application users and see their balance. Abilities to create, block and unblock users, change their balance and roles will be available later.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -40,7 +40,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 App is ready to be deployed!
 
-
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
@@ -48,7 +47,8 @@ App is ready to be deployed!
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
 ## The project was made by the 4D team
-* Vladimir Stulov
-* Valeria Nigametzyanova
-* Ksenia Kuleshova
-* Julia Glukhova
+
+- Vladimir Stulov
+- Valeria Nigametzyanova
+- Ksenia Kuleshova
+- Julia Glukhova

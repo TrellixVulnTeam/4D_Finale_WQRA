@@ -4,7 +4,6 @@ const CheckBox = (props, { check }) => {
   const [checked, setChecked] = useState(true)
 
   function changeCheckbox() {
-    check()
     setChecked(!checked)
   }
 
