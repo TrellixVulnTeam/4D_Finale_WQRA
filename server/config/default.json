@@ -1,5 +1,6 @@
 {
   "serverPort": 5000,
   "dbURL": "mongodb+srv://BestHack:jU84zc0OZXrxMr5F@cluster0.kpvnc.mongodb.net/Finance?retryWrites=true&w=majority",
-  "jwtKey": "easterEgg"
+  "jwtKey": "QUOK",
+  "apiKey": "&apikey=4GDOB0DSWHWXGP9C"
 }

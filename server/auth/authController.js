@@ -27,7 +27,7 @@ class authController {
       }
       const hashPassword = bcrypt.hashSync(password, 8)
       const userRole = await Role.findOne({ value: 'user' })
-      const user = new User({ username, password: hashPassword, roles: [userRole.value] })
+      const user = new User({ username, password: hashPassword, roles: [userRole.value], date: Date() })
       await user.save()
       return res.json({ message: 'Пользователь был успешно зарегистрирован' })
     } catch (e) {
@@ -48,17 +48,46 @@ class authController {
         return res.status(400).json({ message: 'Неверный пароль' })
       }
       const token = generateAccessToken(user._id, user.roles)
-      return res.json({ token })
+      return res.json({
+        token,
+        user: {
+          id: user.id,
+          email: user.username,
+          roles: user.roles,
+          isBlocked: user.isBlocked,
+          balance: user.balance,
+        },
+      })
     } catch (e) {
       console.log(e)
       res.status(400).json({ message: 'Ошибка входа' })
     }
   }
 
+  async auth(req, res) {
+    try {
+      const user = await User.findOne({ _id: req.user.id })
+      const token = generateAccessToken(user._id, user.roles)
+      return res.json({
+        token,
+        user: {
+          id: user.id,
+          email: user.username,
+          roles: user.roles,
+          isBlocked: user.isBlocked,
+          balance: user.balance,
+        },
+      })
+    } catch (e) {
+      console.log(e)
+      res.status(400).json({ message: 'Ошибка аутентификации' })
+    }
+  }
+
   async getUsers(req, res) {
     try {
       const users = await User.find()
-      res.json(users)
+      return res.json(users)
     } catch (e) {}
   }
 }
