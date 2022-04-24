@@ -10,7 +10,7 @@ const generateAccessToken = (id, roles) => {
     id,
     roles,
   }
-  return jwt.sign(payload, config.get('jwtKey'), { expiresIn: '24h' })
+  return jwt.sign(payload, config.get('jwtKey'), { expiresIn: '30m' })
 }
 
 class authController {
@@ -75,7 +75,8 @@ class authController {
           email: user.username,
           roles: user.roles,
           isBlocked: user.isBlocked,
-          balance: user.balance,
+          balanceRUB: user.balanceRUB,
+          balanceUSD: user.balanceUSD,
         },
       })
     } catch (e) {
