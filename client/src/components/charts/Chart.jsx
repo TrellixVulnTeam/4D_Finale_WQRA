@@ -5,53 +5,64 @@ import CheckBox from '../UI/checkBox/CheckBox'
 import ButtonSwith from '../UI/buttons/ButtonSwitch'
 // import { parseISO, format } from 'date-fns'
 
-const Chart = (props) => {
+const Chart = ({ user }) => {
   const [color, setColor] = useState('')
+  console.log(user)
   const [buttBlock, setButtbuttBlock] = useState('button button__block ')
+  const [btnName, setBtnName] = useState('Заблокировать')
 
-  useEffect(() => {
-    if (props.stock.data[0].value < props.stock.data[99].value) setColor('#A0E28D')
-    else setColor('#FF9180')
-  }, [])
+  // useEffect(() => {
+  //   if (props.stock.data[0].value < props.stock.data[99].value) setColor('#A0E28D')
+  //   else setColor('#FF9180')
+  // }, [])
 
   return (
     <div className="stockChart">
-      <div className='status'>
-        <div className='status__info'>Статус: </div>
-        <div className='status__string'>Доступ разрешен</div>
-        <div className='status__button'>
-        <ButtonSwith
-          className={buttBlock}
-          onClick={() => {
-            if (buttBlock === 'button button__block ') {
-              setButtbuttBlock('button button__normal ')
-            }
-            else
-              setButtbuttBlock('button button__block ')
-          }}
-        >Заблокировать
-        </ButtonSwith></div>
-      </div>
-      <div className='role'>
-        <div className='role__info'>Роли:  </div>
-        <div className='role_list'>
-            <div>Читатель</div>
-            <div>Клиент</div>
+      <div className="status">
+        <div className="status__info">Статус:</div>
+        <div className="status__string">{user.isBlocked ? 'Доступ заблокирован' : 'Доступ разрешен'}</div>
+        <div className="status__button">
+          <ButtonSwith
+            className={buttBlock}
+            name={btnName}
+            onClick={() => {
+              if (buttBlock === 'button button__block ') {
+                setButtbuttBlock('button button__normal ')
+                setBtnName('Разблокировать')
+              } else {
+                setButtbuttBlock('button button__block ')
+                setBtnName('Заблокировать')
+              }
+            }}
+          >
+            Заблокировать
+          </ButtonSwith>
         </div>
-        <div className='role__checkbox'>
-          <CheckBox/>
+      </div>
+      <div className="role">
+        <div className="role__info">Роли: </div>
+        <div className="role_list">
           <div>Читатель</div>
-          <CheckBox/>
           <div>Клиент</div>
-          <CheckBox/>
+        </div>
+        <div className="role__checkbox">
+          <CheckBox />
+          <div>Читатель</div>
+          <CheckBox />
+          <div>Клиент</div>
+          <CheckBox />
           <div>Администратор</div>
         </div>
-        <div className='role__button'><button className='button button__normal '>Добавить роль</button></div>
+        <div className="role__button">
+          <button className="button button__normal ">Добавить роль</button>
+        </div>
       </div>
-      <div className='balance'>
-        <div className='balance__info'>Баланс:</div>
-        <div className='balance__number'>14000</div>
-        <div ><button className='button button__normal '>Изменить баланс</button></div>
+      <div className="balance">
+        <div className="balance__info">Баланс:</div>
+        <div className="balance__number">{user.balance}</div>
+        <div>
+          <button className="button button__normal ">Изменить баланс</button>
+        </div>
       </div>
     </div>
   )

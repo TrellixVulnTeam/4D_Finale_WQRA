@@ -4,7 +4,7 @@ import './graph_panel.css'
 import { useState } from 'react'
 import ButtonSwith from '../../components/UI/buttons/ButtonSwitch'
 
-const Graph_panel = (props) => {
+const Graph_panel = ({ user }) => {
   // const [buttDay, setButtDay] = useState('button button__sortPush')
   // const [buttWeek, setButtbuttWeek] = useState('button button__sortNormal ')
   // const [buttMonth, setButtbuttMonth] = useState('button button__sortNormal ')
@@ -13,7 +13,7 @@ const Graph_panel = (props) => {
 
   return (
     <div>
-      <Chart stock={props.stock} />
+      <Chart user={user} />
     </div>
   )
 }

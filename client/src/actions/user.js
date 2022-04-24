@@ -43,36 +43,13 @@ export const auth = () => {
   }
 }
 
-export const buyStock = (symbol, quantity) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.post(
-        'http://localhost:5000/auth/stock',
-        { symbol, quantity },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
-        }
-      )
-      alert(response.data)
-    } catch (e) {
-      alert(e.response.data.message)
-    }
-  }
-}
-
-export const sellStock = (symbol, quantity) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.delete(
-        'http://localhost:5000/auth/stock/',
-        { symbol, quantity },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
-        }
-      )
-      alert(response.data)
-    } catch (e) {
-      alert(e.response.data.message)
-    }
+export const getUsers = async () => {
+  try {
+    const response = await axios.get(`${serverAddress}/auth/users`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
+    })
+    return response.data
+  } catch (e) {
+    console.log(e)
   }
 }

@@ -12,19 +12,18 @@ import axios from 'axios'
 const serverAddress = 'https://gentle-sea-62964.herokuapp.com'
 // const serverAddress = 'http://localhost:5000'
 
-const Stock = (props) => {
+const Stock = ({ user, index }) => {
   const isAuth = useSelector((state) => state.user.isAuth)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    if (!props.stock.quantity) setslashString('')
-    else setslashString(`/${props.stock.quantity}`)
-  }, [])
+  // useEffect(() => {
+  //   if (!props.stock.quantity) setslashString('')
+  //   else setslashString(`/${props.stock.quantity}`)
+  // }, [])
 
   const [counter, setCounter] = useState(1)
   const [slashString, setslashString] = useState('')
   const [GP, setGP] = useState(false)
-
 
   // const sellStock = (id, quantity) => {
   //   return async (dispatch) => {
@@ -42,12 +41,12 @@ const Stock = (props) => {
 
   return (
     <div>
-      <div className="number">{props.stock.number}</div>
+      <div className="number">{index}</div>
       <div className="stock">
-        <div className="stock__name">{props.stock.name}</div>
-        
-        <div className="stock__change">{props.stock.changes}%</div>
-    
+        <div className="stock__name">{user.username}</div>
+
+        <div className="stock__date">{user.date}</div>
+
         <button
           onClick={() => {
             if (GP) setGP(false)
@@ -59,7 +58,7 @@ const Stock = (props) => {
           {!GP && <img src={ArrowUp} alt="arrowUp_img" className="arrowUp_img" />}
         </button>
       </div>
-      {GP && <Graph_panel stock={props.stock} />}
+      {GP && <Graph_panel user={user} />}
     </div>
   )
 }

@@ -10,7 +10,7 @@ const StockList = (props) => {
     getAllNews()
     setInterval(() => {
       getAllNews()
-    }, 120000)
+    }, 10000)
   }, [])
 
   const resources = [
