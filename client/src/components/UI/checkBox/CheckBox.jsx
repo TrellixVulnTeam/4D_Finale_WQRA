@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-const CheckBox = (props) => {
-    const [checked, setChecked] = useState(true);
+const CheckBox = (props, { check }) => {
+  const [checked, setChecked] = useState(true)
 
+  function changeCheckbox() {
+    check()
+    setChecked(!checked)
+  }
 
-   function chengeCheckbox() {
-      setChecked(!checked);
-   }
-
-   return (<div className={props.className}>
-      <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
-   </div>
-
-   )
+  return (
+    <div className={props.className}>
+      <input type="checkbox" checked={checked} onChange={changeCheckbox} />
+    </div>
+  )
 }
 export default CheckBox
