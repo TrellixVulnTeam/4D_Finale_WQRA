@@ -135,9 +135,11 @@ const Account = (props) => {
           </div>
         </div>
       ) : (
-        <div className="account">
+        <div>
           <div className="header">Профиль</div>
+          {/* <div className='container4'> */}
           <Account_containerItem />
+        {/* </div> */}
         </div>
       )}
     </div>

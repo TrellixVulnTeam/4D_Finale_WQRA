@@ -39,6 +39,10 @@
   margin-right: 5%;
   padding-left: 7%;
 }
+.container4 {
+  display: block;
+  margin-left: 19%;
+}
 .filter__status {
   margin-bottom: 10%;
 }
@@ -113,4 +117,12 @@
   font-family: 'Exo 2', 'Arial';
   color: 'Exo 2', 'Arial';
   font-weight: 600;
+}
+.header {
+  margin-top: 9vh;
+  margin-left: 35%;
+  color: #000000;
+  font-size: 40px;
+  font-family: 'Play';
+  width: auto;
 }

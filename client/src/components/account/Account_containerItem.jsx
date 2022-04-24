@@ -1,6 +1,6 @@
 import React from 'react'
 import { setUser } from '../../reducers/userReducer'
-import './account.css'
+import './account_containerItem.css'
 import { store } from '../../reducers/index'
 
 const Account_containerItem = (props) => {
@@ -9,20 +9,20 @@ const Account_containerItem = (props) => {
   const UserDate = '12.12.1990'
   return (
     <div className="account_container">
-      <div className="account_inf">Имя</div>
-      <div className="account_userInf">{user.name}</div>
+      <div className='field'>
+        <div className="account_inf">User name</div>
+        <div className="account_userInf">{user.email}</div>
+      </div>
 
-      <div className="account_inf">Фамилия</div>
-      <div className="account_userInf">{user.surname}</div>
+      <div className='field'>
+        <div className="account_inf">Номер телефона</div>
+        <div className="account_userInf">{UserPhone}</div>
+      </div>
 
-      <div className="account_inf">Электронная почта</div>
-      <div className="account_userInf">{user.email}</div>
-
-      <div className="account_inf">Номер телефона</div>
-      <div className="account_userInf">{UserPhone}</div>
-
-      <div className="account_inf">Дата рождения</div>
-      <div className="account_userInf">{UserDate}</div>
+      <div className='field'>
+        <div className="account_inf">Дата рождения</div>
+        <div className="account_userInf">{UserDate}</div>
+      </div>
     </div>
   )
 }
