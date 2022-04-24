@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Balance from '../balance/Balance'
 import Convert from '../convert/Convert'
 import axios from 'axios'
+import History from '../history/History'
 const serverAddress = 'https://afternoon-gorge-59782.herokuapp.com'
+
 // const serverAddress = 'http://localhost:5000'
 
 const WalletList = (props) => {
@@ -34,13 +36,13 @@ const WalletList = (props) => {
       </div>
       <div className="list"></div>
       <div className="title">{props.title2}</div>
-      {/* <div className="container2">
+      <div className="container2">
         <div className="list">
           {transactions.map((history) => (
             <History history={history} key={history['_id']} />
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

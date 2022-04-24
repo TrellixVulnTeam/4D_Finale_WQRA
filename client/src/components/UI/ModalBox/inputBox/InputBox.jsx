@@ -7,7 +7,9 @@ import ButtonSwith from '../../../UI/buttons/ButtonSwitch'
 import '../../../../components/balance/balance.css'
 import axios from 'axios'
 import ModalBoxDeposit from '../ModalBoxDeposit'
-const serverAddress = 'https://gentle-sea-62964.herokuapp.com'
+const serverAddress = 'https://afternoon-gorge-59782.herokuapp.com'
+
+// const serverAddress = 'http://localhost:5000'
 
 const InputBox = ({ setVisible, ...props }) => {
   const currency = '$'
@@ -26,7 +28,7 @@ const InputBox = ({ setVisible, ...props }) => {
   const deposit = async (replenish, currency) => {
     try {
       const response = await axios.post(
-        `${serverAddress}/api/auth/balance`,
+        `${serverAddress}/balance`,
         {
           replenish,
           currency,
@@ -44,7 +46,7 @@ const InputBox = ({ setVisible, ...props }) => {
 
   const withdraw = async (withdraw, currency) => {
     try {
-      const response = await axios.delete(`${serverAddress}/api/auth/balance?withdraw=${withdraw}&currency=RUB`, {
+      const response = await axios.delete(`${serverAddress}/balance?withdraw=${withdraw}&currency=RUB`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('stonksToken')}` },
       })
       setmodalBoxDepositTrue(true)
@@ -56,8 +58,9 @@ const InputBox = ({ setVisible, ...props }) => {
 
   const convert = async (fromCurrency, toCurrency, quantity) => {
     try {
+      console.log(`${serverAddress}/balance/convert`)
       const response = await axios.delete(
-        `${serverAddress}/api/auth/balance/convert`,
+        `${serverAddress}/balance/convert`,
         {
           fromCurrency,
           toCurrency,
@@ -114,9 +117,6 @@ const InputBox = ({ setVisible, ...props }) => {
                   break
                 case 'Withdraw':
                   withdraw(Number(inputText), 'RUB')
-                  break
-                case 'Convert':
-                  convert(Number(inputText), 'RUB')
                   break
               }
           }

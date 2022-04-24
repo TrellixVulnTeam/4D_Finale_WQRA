@@ -10,7 +10,8 @@ import Input from '../UI/input/Input'
 import axios from 'axios'
 import ButtonSwith from '../UI/buttons/ButtonSwitch'
 import ModalBoxDeposit from '../UI/ModalBox/ModalBoxDeposit'
-const serverAddress = 'https://gentle-sea-62964.herokuapp.com'
+const serverAddress = 'https://afternoon-gorge-59782.herokuapp.com'
+
 // const serverAddress = 'http://localhost:5000'
 
 const Balance = (props) => {
@@ -25,7 +26,7 @@ const Balance = (props) => {
   const convert = async (fromCurrency, toCurrency, quantity) => {
     try {
       const response = await axios.post(
-        `${serverAddress}/api/auth/balance/convert`,
+        `${serverAddress}/balance/convert`,
         {
           fromCurrency,
           toCurrency,
